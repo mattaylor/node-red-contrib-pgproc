@@ -1,11 +1,17 @@
 <script type="text/javascript">
     RED.nodes.registerType('pgproc',{
       inputs:1,
-      outputs:1
+      outputs:1,
+      icon: 'function.png',
+      label: function() { return this.name||this.function||'pgproc'}
   })
 </script>
 
 <script type="text/x-red" data-template-name="pgproc">
+   <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Node Name</label>
+      <input type="text" id="node-input-name" value="pgproc" placeholder="Node Name">
+   </div>
    <div class="form-row">
       <label for="node-input-procname"><i class="fa fa-tag"></i> Proc Name</label>
       <input type="text" id="node-input-procname" value="pypex" placeholder="Stored Procedure">
@@ -25,14 +31,14 @@
    </div>
    <div class="form-row">
       <label for="node-input-columns"><i class="fa fa-tag"></i> Source Columns</label>
-      <input type="text" id="node-input-columns" value=="*" placeholder="Source Columns">
+      <input type="text" id="node-input-columns" value="*" placeholder="Source Columns">
    </div>
    <div class="form-row">
       <label for="node-input-filter"><i class="fa fa-tag"></i> Source Filter</label>
-      <input type="text" id="node-input-columns" value=="*" placeholder="Source Filter">
+      <input type="text" id="node-input-columns" value="*" placeholder="Source Filter">
    </div>
    <div class="form-row">
       <label for="node-input-params"><i class="fa fa-tag"></i> Function Params</label>
-      <input type="text" id="node-input-columns" value=="*" placeholder="Function Params">
+      <input type="text" id="node-input-columns" value="*" placeholder="Function Params">
    </div>
 </script>

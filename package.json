@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/mattaylor/node-red-contrib-pgproc#readme",
   "dependencies": {
+    "knex": "^0.13.0",
     "node-red-contrib-sql": "^0.1.7"
   }
 }

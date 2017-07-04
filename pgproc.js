@@ -1,3 +1,10 @@
+var knex = require(knex) 
+
+var dbc = knex({client: 'pg', debug: false, connection: { 
+   host: '127.0.0.1', user: 'postgres', port: 9700, database: 'postgres'
+ }})
+
+module.exports = function (RED) {
 
 function Pgproc(config) {
 	RED.nodes.createNode(this,conf)
@@ -21,4 +28,4 @@ var util = {
 }
 
 var rend = (str = '', opt = {}) => _.isString(str) ? str.replace(/\$[A-Za-z0-9]+/g, key => opt[key.substring(1)] || (util[key] ? util[key]() : key)) : str
- 
+} 
