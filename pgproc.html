@@ -2,43 +2,53 @@
     RED.nodes.registerType('pgproc',{
       inputs:1,
       outputs:1,
+      category:'function',
       icon: 'function.png',
-      label: function() { return this.name||this.function||'pgproc'}
+      label: function() { return this.name||this.function||'pgproc'},
+      defaults: { 
+        name: { value: 'pgproc' },
+        source: { value: '${result}' },
+        result: { value: null },
+        columns: { value: '*' },
+        function: { value: '' },
+        filter: { value: '' },
+        procname: { value: 'pypex' }
+      }
   })
 </script>
 
 <script type="text/x-red" data-template-name="pgproc">
    <div class="form-row">
-      <label for="node-input-name"><i class="fa fa-tag"></i> Node Name</label>
+      <label for="node-input-name"><i class="fa fa-tag"></i>Node Name</label>
       <input type="text" id="node-input-name" value="pgproc" placeholder="Node Name">
    </div>
    <div class="form-row">
-      <label for="node-input-procname"><i class="fa fa-tag"></i> Proc Name</label>
+      <label for="node-input-procname"><i class="fa fa-tag"></i>Proc Name</label>
       <input type="text" id="node-input-procname" value="pypex" placeholder="Stored Procedure">
    </div>
    <div class="form-tips"><b>Tip:</b> This is here to help.</div>
    <div class="form-row">
-      <label for="node-input-function"><i class="fa fa-tag"></i> Function Name</label>
+      <label for="node-input-function"><i class="fa fa-tag"></i>Function</label>
       <input type="text" id="node-input-function" placeholder="Function Name">
    </div>
    <div class="form-row">
-      <label for="node-input-source"><i class="fa fa-tag"></i> Source Table</label>
+      <label for="node-input-source"><i class="fa fa-tag"></i>Source</label>
       <input type="text" id="node-input-source" placeholder="Source Table">
    </div>
    <div class="form-row">
-      <label for="node-input-result"><i class="fa fa-tag"></i> Result Table</label>
+      <label for="node-input-result"><i class="fa fa-tag"></i>Result</label>
       <input type="text" id="node-input-result" placeholder="Result Table">
    </div>
    <div class="form-row">
-      <label for="node-input-columns"><i class="fa fa-tag"></i> Source Columns</label>
+      <label for="node-input-columns"><i class="fa fa-tag"></i>Columns</label>
       <input type="text" id="node-input-columns" value="*" placeholder="Source Columns">
    </div>
    <div class="form-row">
-      <label for="node-input-filter"><i class="fa fa-tag"></i> Source Filter</label>
+      <label for="node-input-filter"><i class="fa fa-tag"></i>Filter</label>
       <input type="text" id="node-input-columns" value="*" placeholder="Source Filter">
    </div>
    <div class="form-row">
-      <label for="node-input-params"><i class="fa fa-tag"></i> Function Params</label>
+      <label for="node-input-params"><i class="fa fa-tag"></i>Params</label>
       <input type="text" id="node-input-columns" value="*" placeholder="Function Params">
    </div>
 </script>
